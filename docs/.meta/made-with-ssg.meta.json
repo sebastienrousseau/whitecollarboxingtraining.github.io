@@ -1,0 +1,14 @@
+{
+  "banner": "https://whitecollarboxingtraining.com/images/banner/banner.webp",
+  "date": "2026-11-01T09:00:00Z",
+  "description": "Technical overview of how whitecollarboxingtraining.com is compiled with the Rust Static Site Generator (SSG) and Skeletonic CSS.",
+  "eyebrow": "Web Engineering",
+  "headline": "Built with Rust SSG and Skeletonic CSS",
+  "layout": "page",
+  "lead": "Compiled natively into zero-dependency static HTML, CSS, and structured metadata deployed at the Cloudflare edge.",
+  "logo": "https://whitecollarboxingtraining.com/images/logo/whitecollarboxingtraining.svg",
+  "permalink": "https://whitecollarboxingtraining.com/made-with-ssg/",
+  "reading_time": 1,
+  "title": "Made with SSG & Skeletonic CSS | White Collar Boxing Training",
+  "word_count": 57
+}

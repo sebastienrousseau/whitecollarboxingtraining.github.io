@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://whitecollarboxingtraining.com/changelog/sitemap.xml

@@ -1,2 +1,11 @@
 .DS_Store
-main.pyc
+*.pyc
+*.pyo
+__pycache__/
+.pytest_cache/
+node_modules/
+dist/
+.cache/
+coverage/
+*.log
+.lighthouseci/

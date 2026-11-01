@@ -1,0 +1,12 @@
+/* TEAM */
+Author: Sebastien Rousseau
+Site: https://sebastienrousseau.com
+Head Coach: Gary Foley (07749 116927)
+Senior Coach: Sean Murphy (07729 980677)
+Location: Anchor Hall, Bulwer Rd, Barnet, London EN5 5EX, UK
+
+/* SITE */
+Last update: 2026-11-01
+Language: English (en-GB)
+Standards: HTML5, CSS3, WCAG 2.2 AAA, Schema.org JSON-LD, OpenGraph
+Components: Rust Static Site Generator (SSG), Skeletonic CSS, Cloudflare Edge

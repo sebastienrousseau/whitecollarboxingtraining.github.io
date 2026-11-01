@@ -1,0 +1,46 @@
+# SPDX-FileCopyrightText: 2015-2026 Sebastien Rousseau
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Publish GitHub Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      - name: Verify release version
+        run: ./scripts/verify_release_version.sh
+
+      - name: Package static release archive
+        run: |
+          tar -czf "whitecollarboxingtraining-${GITHUB_REF_NAME}.tar.gz" public/
+          shasum -a 256 "whitecollarboxingtraining-${GITHUB_REF_NAME}.tar.gz" > SHA256SUMS.txt
+
+      - name: Compose release notes
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 scripts/release_notes.py --tag "${GITHUB_REF_NAME}" --sums SHA256SUMS.txt --out RELEASE_NOTES.md
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          title="$(python3 scripts/release_notes.py --tag "${GITHUB_REF_NAME}" --title)"
+          gh release create "${GITHUB_REF_NAME}" \
+            "whitecollarboxingtraining-${GITHUB_REF_NAME}.tar.gz" \
+            SHA256SUMS.txt \
+            --title "$title" \
+            --notes-file RELEASE_NOTES.md

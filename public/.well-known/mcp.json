@@ -1,0 +1,25 @@
+{
+  "capabilities": {
+    "prompts": {
+      "listChanged": false
+    },
+    "resources": {
+      "listChanged": false
+    },
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "prompts": [],
+  "protocolVersion": "2025-03-26",
+  "resources": [],
+  "serverInfo": {
+    "name": "White Collar Boxing Training",
+    "version": "0.0.71"
+  },
+  "tools": [],
+  "transport": {
+    "type": "http",
+    "url": "https://whitecollarboxingtraining.com/.well-known/mcp"
+  }
+}

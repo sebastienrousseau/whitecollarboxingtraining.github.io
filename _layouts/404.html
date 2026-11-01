@@ -1,0 +1,16 @@
+{{#extends "base"}}
+{{#block "meta_robots"}}<meta name="robots" content="noindex, follow">{{/block}}
+{{#block "main"}}
+<!-- SPDX-FileCopyrightText: 2015-2026 Sebastien Rousseau -->
+<!-- SPDX-License-Identifier: Apache-2.0 OR MIT -->
+<article class="section page-shell error-page">
+  <div class="wrap page-grid">
+    <header>
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1>{{headline}}</h1>
+      <p class="lead">{{lead}}</p>
+    </header>
+    <div class="prose content-body">{{!content}}</div>
+  </div>
+</article>
+{{/block}}

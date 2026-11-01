@@ -1,0 +1,17 @@
+{
+  "name": "whitecollarboxingtraining.github.io",
+  "version": "0.0.2",
+  "private": true,
+  "description": "White Collar Boxing Training — London & UK Executive Boxing Coaching built with Rust SSG and Skeletonic CSS",
+  "homepage": "https://whitecollarboxingtraining.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastienrousseau/whitecollarboxingtraining.github.io.git"
+  },
+  "license": "Apache-2.0 OR MIT",
+  "scripts": {
+    "build": "make build",
+    "test": "node --test tests/property.test.js",
+    "verify": "make verify"
+  }
+}
