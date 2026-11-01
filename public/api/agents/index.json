@@ -1,0 +1,21 @@
+{
+  "api": "ssg-agent-api",
+  "counts": {
+    "posts": 16,
+    "topics": 0
+  },
+  "links": {
+    "index": "https://whitecollarboxingtraining.com/api/agents/index.json",
+    "person": "https://whitecollarboxingtraining.com/api/agents/person.json",
+    "posts": "https://whitecollarboxingtraining.com/api/agents/posts.json",
+    "topics": "https://whitecollarboxingtraining.com/api/agents/topics.json"
+  },
+  "site": {
+    "description": "Premier white collar boxing training in Barnet, North London & the UK. Beginner, amateur, and advanced boxing coaching and 1-to-1 fight camps led by Gary Foley and Commonwealth Games Gold Medallist Sean Murphy.",
+    "language": "en-GB",
+    "name": "White Collar Boxing Training",
+    "title": "White Collar Boxing Training | London & UK Executive Boxing Coaching",
+    "url": "https://whitecollarboxingtraining.com"
+  },
+  "version": "0.0.71"
+}

@@ -1,0 +1,4 @@
+# Cloudflare Pages & Netlify Redirects for whitecollarboxingtraining.com
+https://www.whitecollarboxingtraining.com/* https://whitecollarboxingtraining.com/:splat 301!
+https://whitecollarboxingtraining.github.io/* https://whitecollarboxingtraining.com/:splat 301!
+/index.html / 301

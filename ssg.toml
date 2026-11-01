@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2015-2026 Sebastien Rousseau
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+# Site-level configuration for whitecollarboxingtraining.github.io
+site_name = "White Collar Boxing Training"
+site_title = "White Collar Boxing Training | London & UK Executive Boxing Coaching"
+site_description = "Premier white collar boxing training in Barnet, North London & the UK. Beginner, amateur, and advanced boxing coaching and 1-to-1 fight camps led by Gary Foley and Commonwealth Games Gold Medallist Sean Murphy."
+base_url = "https://whitecollarboxingtraining.com"
+language = "en-GB"
+theme_color = "#820000"
+
+content_dir = "_posts"
+template_dir = "_layouts"
+output_dir = "public"
+
+[agents]
+agents_txt = true
+ai_plugin = true
+
+[agents.mcp]
+enabled = true
+
+[edge_headers]
+targets = ["netlify", "cloudflare", "vercel"]

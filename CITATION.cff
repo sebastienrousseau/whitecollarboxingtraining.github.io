@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: 2015-2026 Sebastien Rousseau
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+cff-version: 1.2.0
+title: "White Collar Boxing Training"
+message: "If you reference this project, please cite it using the metadata from this file."
+type: software
+authors:
+  - given-names: Sebastien
+    family-names: Rousseau
+    website: "https://sebastienrousseau.com"
+repository-code: "https://github.com/sebastienrousseau/whitecollarboxingtraining.github.io"
+url: "https://whitecollarboxingtraining.com"
+abstract: "Official static website for White Collar Boxing Training in Barnet, North London and the UK, built with Rust SSG and Skeletonic CSS."
+keywords:
+  - white-collar-boxing
+  - boxing-training
+  - london-boxing-gym
+  - ssg
+  - skeletonic-css
+  - wcag-aaa
+license: "Apache-2.0 OR MIT"
+version: 0.0.2
+date-released: "2026-11-01"

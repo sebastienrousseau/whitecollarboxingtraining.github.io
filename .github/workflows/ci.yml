@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2015-2026 Sebastien Rousseau
+# SPDX-License-Identifier: Apache-2.0 OR MIT
+name: CI & Deploy
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  SSG_VERSION: "0.0.71"
+
+jobs:
+  build-and-verify:
+    name: Build, Verify & Audit
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Install Rust SSG
+        run: |
+          set -euo pipefail
+          ARCHIVE="ssg-v${SSG_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+          BASE_URL="https://github.com/sebastienrousseau/static-site-generator/releases/download/v${SSG_VERSION}"
+          curl -fsSL "${BASE_URL}/${ARCHIVE}" -o "/tmp/${ARCHIVE}"
+          curl -fsSL "${BASE_URL}/${ARCHIVE}.sha256" -o "/tmp/${ARCHIVE}.sha256"
+          (cd /tmp && sha256sum -c "${ARCHIVE}.sha256")
+          mkdir -p "$HOME/.cargo/bin"
+          tar -xzf "/tmp/${ARCHIVE}" -C "$HOME/.cargo/bin" ssg
+          chmod +x "$HOME/.cargo/bin/ssg"
+          ssg --version
+
+      - name: Build static site
+        run: make build
+
+      - name: Run lint, regression tests, and WCAG AAA contrast audit
+        run: make verify
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: public
+          include-hidden-files: true
+
+  deploy:
+    name: Deploy to GitHub Pages
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main')
+    needs: build-and-verify
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1

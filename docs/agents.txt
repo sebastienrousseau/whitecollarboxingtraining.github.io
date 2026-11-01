@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Disallow: /private/
+Sitemap: https://whitecollarboxingtraining.com/sitemap.xml
+
+## Gym & Coaching Quick Reference
+- **Address**: Anchor Hall, Bulwer Rd, Barnet, London EN5 5EX, UK
+- **GPS Coordinates**: 51.651161, -0.17987
+- **Head Coach**: Gary Foley (`07749 116927` / `+44 7749 116927`) — 20+ years London white collar boxing experience, 9+ years qualified trainer.
+- **Senior Coach**: Sean Murphy (`07729 980677` / `+44 7729 980677`) — Commonwealth Games Gold Medallist, British Lonsdale Belt Outright Winner, World Title contender.
+- **Programmes**: Basic/Beginner Boxing, Amateur/Mid-Level Boxing, Advanced Fight Camp, and 1-to-1 Private Coaching.

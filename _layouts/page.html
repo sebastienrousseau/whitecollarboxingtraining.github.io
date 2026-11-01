@@ -1,0 +1,22 @@
+{{#extends "base"}}
+{{#block "main"}}
+<!-- SPDX-FileCopyrightText: 2015-2026 Sebastien Rousseau -->
+<!-- SPDX-License-Identifier: Apache-2.0 OR MIT -->
+<article class="section page-shell">
+  <div class="wrap page-grid">
+    <header>
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="/">Home</a></li>
+          <li class="sep" aria-hidden="true">/</li>
+          <li aria-current="page">{{title}}</li>
+        </ol>
+      </nav>
+      <p class="eyebrow">{{eyebrow}}</p>
+      <h1>{{headline}}</h1>
+      <p class="lead">{{lead}}</p>
+    </header>
+    <div class="prose content-body">{{!content}}</div>
+  </div>
+</article>
+{{/block}}
